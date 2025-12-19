@@ -1,0 +1,15 @@
+{% extends "base.html"%}
+
+{%block title%}刪除投票主題{%endblock%}
+
+{%blockmain%}
+<h1>刪除投票主題</h1>
+<form action=""method="post">
+
+{%csrf_token%}
+<input type="submit" value="確定刪除">
+
+    
+</form>
+
+{%endblock%}
