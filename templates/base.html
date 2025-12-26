@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{%block title%}Document{%endblock%}</title>
+    <title>{% block title %}Document{% endblock %}</title>
 </head>
 <body>
     <div class="container">
         <div>
             {% if not user.is_authenticated %}
             <a href="{% url 'login'%}">登入</a>
-            {%else%}
+            {% else %}
             <from action="{%url 'logout' %}" method="post">
-                {% csrf_token%}
+                {% csrf_token %}
                 Hi!{{user}}
                 <input type="submit" value="登出">
             {% endif %}
         </div>
-    {%block main %}{%endblock %}
+    {% block main %}{% endblock %}
+
     <div>由blue製作</div>
     </div>
+
+    <div>由20616陳柏儒blue製作</div>
 </body>
 </html>
