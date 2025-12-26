@@ -1,5 +1,5 @@
 """
-URL configuration for mygo project.
+URL configuration for guestbook project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -15,15 +15,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include, reverse_lazy
-from django.views.generic import RedirectView
-from show import views
+from django.urls import path
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.homepage),
-    path('anon/',views.about_me),
-    path('account/',include("django.contrib.auth.urls")),
-    path('poll/',include('default.urls')),
-    path('',RedirectView.as_view(url=reverse_lazy('poll_list')))
-
 ]
